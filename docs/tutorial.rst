@@ -6,7 +6,7 @@ On Premises Authentication
 ==========================
 Getting started is easy.  Just create some credentials you will use to connect to SharePoint with HttpNtlmAuth and pass the url and credentials to the Site object. ::
 
-    from shareplum import Site
+    from shareplumplus import Site
     from requests_ntlm import HttpNtlmAuth
 
     cred = HttpNtlmAuth('Username', 'Password')
@@ -16,8 +16,8 @@ Office 365 Authentication
 ==========================
 For Office 365 Sharepoint is just as easy. The Office365 class grabs a login token from Microsoft's login servers then It logins the Sharepoint site and uses the cookie for Authentication. Make sure to put just the root url for the site in Office365 and add Https:// at start. ::
 
-    from shareplum import Site
-    from shareplum import Office365
+    from shareplumplus import Site
+    from shareplumplus import Office365
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', authcookie=authcookie)
@@ -30,9 +30,9 @@ You can access aditional features by utilizing the SharePoint REST API in ShareP
 
 ::
 
-    from shareplum import Site
-    from shareplum import Office365
-    from shareplum.site import Version
+    from shareplumplus import Site
+    from shareplumplus import Office365
+    from shareplumplus.site import Version
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', version=Version.v2016, authcookie=authcookie)

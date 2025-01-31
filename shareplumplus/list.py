@@ -188,11 +188,14 @@ class _List2007:
         fields=None,  # type: Optional[List[str]]
         query=None,  # type: Optional[Dict]
         row_limit=0,  # type: int
+        query_options={},  # type: dict
         debug=False,  # type: bool
     ):
         # type: (...) -> Optional[Any]
         """Get Items from current list
            row_limit defaulted to 0 (unlimited)
+           query_options is a dict containing QueryOptions parameters
+                Currently supported: RootFolder {"RootFolder": "..."}
         """
 
         # Build Request
@@ -220,6 +223,17 @@ class _List2007:
         else:
             # No fields or views provided so get everything
             viewfields = [x for x in self._sp_cols]
+
+        # Add Query Options
+        for key in query_options.keys():
+            query_options_formatted = {}
+            if key == "RootFolder":
+                query_options_formatted[key] = query_options[key]
+
+            if len(query_options_formatted) > 0:
+                soap_request.add_query_options(
+                    query_options_formatted
+                )
 
         # Add query
         if query:
