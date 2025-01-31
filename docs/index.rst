@@ -21,6 +21,7 @@ Example::
     install
     tutorial
     queries
+    query_options
     files
     advanced
     objects
