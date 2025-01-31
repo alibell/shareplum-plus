@@ -1,12 +1,9 @@
-PROJECT STATUS
-===================
-
-I have not had access to a SharePoint server for a while now and I do not feel that I can support this library in any reasonable fashion.  I will still accept pull requests and respond to issues as much as I can, but please be aware that I am no longer capapable of testing most of these changes.
-
-SharePlum
+SharePlum Plus
 ==========
 
 SharePlum is an easier way to work with SharePoint services. It handles all of the messy parts of dealing with SharePoint and allows you to write clean and Pythonic code.
+SharePlum is a fork a SharePlum.
+SharePlum is not maintened since many years, in this fork I fix some major bugs.
 
 
 
