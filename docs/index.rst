@@ -6,7 +6,7 @@ SharePlum is an easier way to work with SharePoint services.  It handles all of 
 
 Example::
     
-    from shareplum import Site
+    from shareplumplus import Site
     from requests_ntlm import HttpNtlmAuth
 
     cred = HttpNtlmAuth('Username', 'Password')
@@ -21,6 +21,7 @@ Example::
     install
     tutorial
     queries
+    query_options
     files
     advanced
     objects

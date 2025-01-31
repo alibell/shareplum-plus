@@ -1,12 +1,9 @@
-PROJECT STATUS
-===================
-
-I have not had access to a SharePoint server for a while now and I do not feel that I can support this library in any reasonable fashion.  I will still accept pull requests and respond to issues as much as I can, but please be aware that I am no longer capapable of testing most of these changes.
-
-SharePlum
+SharePlum Plus
 ==========
 
 SharePlum is an easier way to work with SharePoint services. It handles all of the messy parts of dealing with SharePoint and allows you to write clean and Pythonic code.
+SharePlum is a fork a SharePlum.
+SharePlum is not maintened since many years, in this fork I fix some major bugs.
 
 
 
@@ -15,7 +12,7 @@ Usage
 
 ::
 
-    from shareplum import Site
+    from shareplumplus import Site
     from requests_ntlm import HttpNtlmAuth
 
     auth = HttpNtlmAuth('DIR\\username', 'password')
@@ -28,8 +25,8 @@ Authenticate to Office365 Sharepoint
 
 ::
 
-    from shareplum import Site
-    from shareplum import Office365
+    from shareplumplus import Site
+    from shareplumplus import Office365
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', authcookie=authcookie)
@@ -42,9 +39,9 @@ Access REST API
 
 ::
 
-    from shareplum import Site
-    from shareplum import Office365
-    from shareplum.site import Version
+    from shareplumplus import Site
+    from shareplumplus import Office365
+    from shareplumplus.site import Version
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', version=Version.v2016, authcookie=authcookie)

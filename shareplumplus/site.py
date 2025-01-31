@@ -360,8 +360,26 @@ class _Site2007:
             data.append({key[4:]: value for (key, value) in row.items() if key[4:]})
 
         return {
-            "py": {i["ImnName"]: i["ID"] + ";#" + i["ImnName"] for i in data},
-            "sp": {i["ID"] + ";#" + i["ImnName"]: i["ImnName"] for i in data},
+            "py": {
+                i.get(
+                    "ImnName",
+                    i.get("Name", "")
+                ): i["ID"] + ";#" + i.get(
+                    "ImnName",
+                    i.get("Name", "")
+                )
+                for i in data
+            },
+            "sp": {
+                i["ID"] + ";#" + i.get(
+                    "ImnName",
+                    i.get("Name", "")
+                ): i.get(
+                    "ImnName",
+                    i.get("Name", "")
+                )
+                for i in data
+            },
         }
 
     # SharePoint Method Objects
