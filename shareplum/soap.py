@@ -104,6 +104,23 @@ class Soap:
         if "Where" in pyquery:
             Query.append(pyquery["Where"])
 
+    # GetListItems Method
+    def add_query_options(self, pyqueryoptions):
+        # type: (Dict) -> None
+        query_option = etree.SubElement(
+            self.command,
+            "{http://schemas.microsoft.com/sharepoint/soap/}queryOptions"
+        )
+        QueryOption = etree.SubElement(query_option, "QueryOptions")
+
+        for field in pyqueryoptions.keys():
+            if field == "RootFolder":
+                root_folder = etree.SubElement(
+                    QueryOption,
+                    "Folder",
+                )
+                root_folder.text = pyqueryoptions[field]
+
     def __repr__(self):  # type: () -> str
         return (self.start_str + etree.tostring(self.envelope)).decode("utf-8")
 
