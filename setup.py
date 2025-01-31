@@ -7,18 +7,18 @@ except ImportError:
 
 from codecs import open
 
-with open('shareplum/version.py', 'r') as fd:
+with open('shareplumplus/version.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
 
 setup(
-    name='SharePlum-Plus',
+    name='SharePlum Plus',
     version=version,
     description='Python SharePoint Library',
     long_description=open('README.rst').read(),
-    url='https://github.com/jasonrollins/shareplum',
-    author='Jason Rollins',
-    author_email='jason.c.rollins@gmail.com',
+    url='https://github.com/alibell/shareplum-plus',
+    author='Jason Rollins, Ali Bellamine',
+    author_email='jason.c.rollins@gmail.com, contact@alibellamine.me',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -35,6 +35,6 @@ setup(
         'Topic :: Office/Business',
     ],
     keywords=['SharePoint'],
-    packages=['shareplum'],
+    packages=['shareplumplus'],
     install_requires=['lxml', 'requests', 'requests-ntlm', 'requests-toolbelt'],
 )

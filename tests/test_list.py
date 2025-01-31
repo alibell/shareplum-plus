@@ -1,6 +1,6 @@
-from shareplum import Site
-from shareplum import Office365
-from shareplum.site import Version
+from shareplumplus import Site
+from shareplumplus import Office365
+from shareplumplus.site import Version
 from .test_settings import TEST_SETTINGS, TEST_PASSWORD
 import unittest
 

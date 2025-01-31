@@ -12,7 +12,7 @@ Usage
 
 ::
 
-    from shareplum import Site
+    from shareplumplus import Site
     from requests_ntlm import HttpNtlmAuth
 
     auth = HttpNtlmAuth('DIR\\username', 'password')
@@ -25,8 +25,8 @@ Authenticate to Office365 Sharepoint
 
 ::
 
-    from shareplum import Site
-    from shareplum import Office365
+    from shareplumplus import Site
+    from shareplumplus import Office365
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', authcookie=authcookie)
@@ -39,9 +39,9 @@ Access REST API
 
 ::
 
-    from shareplum import Site
-    from shareplum import Office365
-    from shareplum.site import Version
+    from shareplumplus import Site
+    from shareplumplus import Office365
+    from shareplumplus.site import Version
 
     authcookie = Office365('https://abc.sharepoint.com', username='username@abc.com', password='password').GetCookies()
     site = Site('https://abc.sharepoint.com/sites/MySharePointSite/', version=Version.v2016, authcookie=authcookie)
