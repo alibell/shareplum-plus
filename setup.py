@@ -12,7 +12,7 @@ with open('shareplum/version.py', 'r') as fd:
                         fd.read(), re.MULTILINE).group(1)
 
 setup(
-    name='SharePlum',
+    name='SharePlum-Plus',
     version=version,
     description='Python SharePoint Library',
     long_description=open('README.rst').read(),
